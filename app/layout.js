@@ -1,5 +1,7 @@
 import "./globals.css";
 import Sidebar from "@/components/layoutComponents/Sidebar";
+import FollowBar from "@/components/layoutComponents/FollowBar";
+import Modal from "@/components/Modal";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,9 +16,10 @@ export default function RootLayout({ children }) {
           <div className="xl:px-30 container mx-auto h-full max-w-6xl">
             <div className="grid h-full grid-cols-4">
               <Sidebar />
-              <div className="lg:col-spn-2 col-span-3 border-x-[1px] border-neutral-800">
+              <div className="col-span-3 border-x-[1px] border-neutral-800 lg:col-span-2">
                 {children}
               </div>
+              <FollowBar />
             </div>
           </div>
         </div>
