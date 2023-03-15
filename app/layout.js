@@ -1,7 +1,8 @@
 import "./globals.css";
 import Sidebar from "@/components/layoutComponents/Sidebar";
 import FollowBar from "@/components/layoutComponents/FollowBar";
-import Modal from "@/components/Modal";
+import LoginModal from "@/components/modals/LoginModal";
+import RegisterModal from "@/components/modals/RegisterModal";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,6 +13,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <RegisterModal />
+        <LoginModal />
         <div className="h-screen bg-black">
           <div className="xl:px-30 container mx-auto h-full max-w-6xl">
             <div className="grid h-full grid-cols-4">
