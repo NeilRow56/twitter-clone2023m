@@ -3,7 +3,7 @@
 import { create } from "zustand";
 
 const useLoginModal = create((set) => ({
-  isOpen: true,
+  isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
