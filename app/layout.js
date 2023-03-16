@@ -3,6 +3,8 @@ import Sidebar from "@/components/layoutComponents/Sidebar";
 import FollowBar from "@/components/layoutComponents/FollowBar";
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
+import Wrapper from "@/components/Wrapper";
+import Provider from "@/components/Provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,19 +15,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <RegisterModal />
-        <LoginModal />
-        <div className="h-screen bg-black">
-          <div className="xl:px-30 container mx-auto h-full max-w-6xl">
-            <div className="grid h-full grid-cols-4">
-              <Sidebar />
-              <div className="col-span-3 border-x-[1px] border-neutral-800 lg:col-span-2">
-                {children}
+        <Provider>
+          <Wrapper>
+            <RegisterModal />
+            <LoginModal />
+            <div className="h-screen bg-black">
+              <div className="xl:px-30 container mx-auto h-full max-w-6xl">
+                <div className="grid h-full grid-cols-4">
+                  <Sidebar />
+                  <div className="col-span-3 border-x-[1px] border-neutral-800 lg:col-span-2">
+                    {children}
+                  </div>
+                  <FollowBar />
+                </div>
               </div>
-              <FollowBar />
             </div>
-          </div>
-        </div>
+          </Wrapper>
+        </Provider>
       </body>
     </html>
   );
