@@ -13,7 +13,7 @@ const Avatar = ({ userId, isLarge, hasBorder }) => {
     (event) => {
       event.stopPropagation();
 
-      const url = `/users/${userId}`;
+      const url = `/user/${userId}`;
 
       router.push(url);
     },
@@ -35,6 +35,7 @@ const Avatar = ({ userId, isLarge, hasBorder }) => {
       <Image
         fill
         sizes="(max-width: 128px)"
+        priority
         style={{
           objectFit: "cover",
           borderRadius: "100%",

@@ -49,7 +49,11 @@ export default function Sidebar() {
           ))}
           {currentUser && (
             <SidebarItem
-              onClick={() => signOut()}
+              onClick={() =>
+                signOut({
+                  callbackUrl: `${window.location.origin}`,
+                })
+              }
               icon={BiLogOut}
               label="Logout"
             />

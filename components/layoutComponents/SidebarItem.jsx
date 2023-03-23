@@ -4,15 +4,12 @@ import React, { useCallback } from "react";
 import { useRouter } from "next/navigation";
 
 import useLoginModal from "@/hooks/useLoginModal";
-import useCurrentUser from "@/hooks/useCurrentUser";
 
 const SidebarItem = ({ label, href, icon: Icon, onClick, auth }) => {
   //Created an alias for icon so that it could be used as a component
 
   const router = useRouter();
   const loginModal = useLoginModal();
-
-  const { data: currentUser } = useCurrentUser();
 
   const handleClick = useCallback(() => {
     if (onClick) {
@@ -24,7 +21,7 @@ const SidebarItem = ({ label, href, icon: Icon, onClick, auth }) => {
     } else if (href) {
       router.push(href);
     }
-  }, [router, href, auth, loginModal, onClick, currentUser]);
+  }, [router, href, auth, loginModal, onClick]);
 
   return (
     <div onClick={handleClick} className="flex flex-row items-center">

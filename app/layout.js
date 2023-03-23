@@ -1,6 +1,6 @@
 import "./globals.css";
 import Sidebar from "@/components/layoutComponents/Sidebar";
-import FollowBar from "@/components/layoutComponents/FollowBar";
+import FollowBar2 from "@/components/layoutComponents/FollowBar2";
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
 import Wrapper from "@/components/Wrapper";
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
                   <div className="col-span-3 border-x-[1px] border-neutral-800 lg:col-span-2">
                     {children}
                   </div>
-                  <FollowBar />
+                  <FollowBar2 />
                 </div>
               </div>
             </div>
