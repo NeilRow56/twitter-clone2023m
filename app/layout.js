@@ -5,6 +5,8 @@ import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
 import Wrapper from "@/components/Wrapper";
 import Provider from "@/components/Provider";
+import EditModal from "@/components/modals/editModal";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,8 +19,10 @@ export default function RootLayout({ children }) {
       <body>
         <Provider>
           <Wrapper>
+            <ReactQueryDevtools />
             <RegisterModal />
             <LoginModal />
+            <EditModal />
             <div className="h-screen bg-black">
               <div className="xl:px-30 container mx-auto h-full max-w-6xl">
                 <div className="grid h-full grid-cols-4">

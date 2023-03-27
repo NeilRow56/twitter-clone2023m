@@ -3,9 +3,9 @@
 import { format } from "date-fns";
 import { BiCalendar } from "react-icons/bi";
 import useCurrentUser from "@/hooks/useCurrentUser";
-import useUser from "@/hooks/useUser";
 import { useMemo } from "react";
 import Button from "../Button";
+import useEditModal from "@/hooks/useEditModal";
 
 const UserBio = ({
   id,
@@ -17,6 +17,8 @@ const UserBio = ({
   followersCount,
 }) => {
   const { data: currentUser } = useCurrentUser();
+
+  const editModal = useEditModal();
 
   const dateJoined = useMemo(() => {
     if (!createdAt) {
@@ -30,7 +32,7 @@ const UserBio = ({
     <div className="border-b-[1px] border-neutral-800 pb-4">
       <div className="flex justify-end p-2">
         {currentUser?.id === id ? (
-          <Button onClick={() => {}} secondary label="Edit" />
+          <Button onClick={editModal.onOpen} secondary label="Edit" />
         ) : (
           <Button onClick={() => {}} label="Follow" secondary />
         )}
